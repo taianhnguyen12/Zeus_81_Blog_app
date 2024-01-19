@@ -25,7 +25,7 @@ public class Post {
     private Long id;
 
 
-    @Column(name = "title ", length =100, unique = true,nullable = false)
+    @Column(name = "title ", length = 100, unique = true, nullable = false)
 
     private String title;
 
@@ -33,10 +33,14 @@ public class Post {
 
     private String description;
 
+    @Column(name = "content", length = 150, nullable = false)
+
+    private String content;
+
 
     @Column(name = "created_At",nullable = false,updatable = false)
     @CreationTimestamp
-    private LocalDateTime CreatedAt;
+    private LocalDateTime createdAt;
 
 
 

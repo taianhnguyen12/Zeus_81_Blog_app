@@ -9,7 +9,7 @@ public class PostMaper {
         var post = new Post();
         post.setTitle(form.getTitle());
         post.setDescription(form.getDescription());
-        post.setContent(post.getContent());
+        post.setContent(form.getContent());
         return  post;
     }
 
@@ -17,10 +17,10 @@ public class PostMaper {
         var dto = new PostDto();
         dto.setId(post.getId());
         dto.setTitle(post.getTitle());
-        post.setContent(post.getContent());
-        post.setDescription(post.getDescription());
-        post.setCreatedAt(post.getCreatedAt());
-        post.setUpdatedAt(post.getUpdatedAt());
+        dto.setContent(post.getContent());
+        dto.setDescription(post.getDescription());
+        dto.setCreatedAt(post.getCreatedAt());
+        dto.setUpdatedAt(post.getUpdatedAt());
 
         return  dto ;
       }

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Setter
 
 public class PostDto {
-    private Long Id;
+    private Long id;
     private String title;
     private String description;
     private String content;
