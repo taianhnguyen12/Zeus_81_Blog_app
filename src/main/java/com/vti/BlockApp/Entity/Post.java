@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.boot.registry.selector.spi.StrategyCreator;
 
 import java.time.LocalDate;
@@ -45,7 +46,7 @@ public class Post {
 
 
     @Column(name = "updated_at",nullable = false)
-    @CreationTimestamp
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
 }

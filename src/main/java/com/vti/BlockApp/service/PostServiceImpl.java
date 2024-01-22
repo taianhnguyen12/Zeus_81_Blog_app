@@ -2,6 +2,7 @@ package com.vti.BlockApp.service;
 
 import com.vti.BlockApp.Entity.Post;
 import com.vti.BlockApp.Form.PostCreateForm;
+import com.vti.BlockApp.Form.PostUpdateForm;
 import com.vti.BlockApp.dto.PostDto;
 import com.vti.BlockApp.maper.PostMaper;
 import com.vti.BlockApp.repository.PostRepository;
@@ -32,6 +33,14 @@ public class PostServiceImpl implements PostService{
     public PostDto create(PostCreateForm form) {
 
         var post = PostMaper.map(form);
+        var savePost = postRepository.save(post);
+        return PostMaper.map(savePost);
+    }
+
+    @Override
+    public PostDto update(PostUpdateForm form, Long id) {
+        var post = PostMaper.map(form);
+        post.setId(id);
         var savePost = postRepository.save(post);
         return PostMaper.map(savePost);
     }
