@@ -31,4 +31,8 @@ public PostDto create(@RequestBody PostCreateForm form) {
 public PostDto update(@RequestBody PostUpdateForm form , @PathVariable("id") Long id ) {
     return postService.update(form, id);
 }
+@DeleteMapping("/api/v1/posts/{id}")
+public void deteleById(@PathVariable("id") Long id) {
+    postService.deleteById(id);
+}
 }
